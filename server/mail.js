@@ -1,5 +1,6 @@
 const mailer = require("nodemailer");
 const { Hello } = require("./hello_template")
+require('dotenv').config();
 
 const getEmailData = (to, AuthCode) => {
     let data = null;
