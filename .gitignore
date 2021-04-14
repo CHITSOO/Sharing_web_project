@@ -1,0 +1,9 @@
+node_modules
+
+
+dev.js
+
+uploads
+
+.env
+.env.test
