@@ -28,7 +28,7 @@ function CheckBox(props) {
         <React.Fragment key={index} >
             <Checkbox onChange={() => handleToggle(value._id)}
                 checked={Checked.indexOf(value._id) === -1 ? false : true} />
-            <span>{value.name}</span>
+            <span>{value.name}&nbsp;&nbsp;&nbsp;&nbsp;</span>
         </React.Fragment>
     ))
 

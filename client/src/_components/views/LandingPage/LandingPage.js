@@ -6,9 +6,8 @@ import { Icon } from '@ant-design/compatible';
 import Meta from 'antd/lib/card/Meta';
 import ImageSlider from '../../utils/ImageSlider';
 import Checkbox from './Sections/CheckBox';
-import Radiobox from './Sections/RadioBox';
 import SearchFeature from './Sections/SearchFeature';
-import { continents, price } from './Sections/Datas';
+import { styles, price } from './Sections/Datas';
 
 function LandingPage() {
     const [Products, setProducts] = useState([])
@@ -16,7 +15,7 @@ function LandingPage() {
     const [Limit, setLimit] = useState(8) //보다 20개정도가 낫지않나..?아닌가?
     const [PostSize, setPostSize] = useState(0)
     const [Filters, setFilters] = useState({
-        continents: [],
+        styles: [],
         price: []
     })
     const [SearchTerm, setSearchTerm] = useState("")
@@ -59,7 +58,8 @@ function LandingPage() {
         return <Col lg={6} md={8} xs={24} key={index}> 
             <Card
                 cover={
-                    <ImageSlider images={product.images} />}
+                    <a href={`/product/${product._id}`} >
+                    <ImageSlider images={product.images} /></a>}
                     //<img style={{ width: '100%', maxHeight:'150%' }}
                     //   src={`http://localhost:4000/${product.images[0]}` />
             >
@@ -126,13 +126,9 @@ function LandingPage() {
 
             {/* Filter */}
             <Row gutter={[16, 16]}>
-                <Col lg={12} xs={24}> 
+                <Col lg={24} xs={48}> 
                     {/* CheckBox */}
-                    <Checkbox list={continents} handleFilters={filters => handleFilters(filters, "continents")} />
-                </Col>
-                <Col lg={12} xs={24}>
-                    {/* RadioBox */}
-                    <Radiobox list={price} handleFilters={filters => handleFilters(filters, "price")} />
+                    <Checkbox list={styles} handleFilters={filters => handleFilters(filters, "styles")} />
                 </Col>
             </Row>
 

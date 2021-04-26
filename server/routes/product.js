@@ -99,7 +99,7 @@ router.post('/products', (req, res) => {
 })
 
 
-/*
+
 //id=123123123,324234234,324234234  type=array
 router.get('/products_by_id', (req, res) => {
 
@@ -126,7 +126,7 @@ router.get('/products_by_id', (req, res) => {
         })
 
 })
-*/
+
 
 
 module.exports = router;

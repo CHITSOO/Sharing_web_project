@@ -4,7 +4,7 @@ import FileUpload from '../../utils/FileUpload';
 import Axios from 'axios';
 const { TextArea } = Input;
 
-const Continents = [
+const Styles = [
     { key: 1, value: "귀여운" },
     { key: 2, value: "깔끔한" },
     { key: 3, value: "클래식" },
@@ -59,7 +59,7 @@ function UploadProductPage(props) {
             description: Description,
             price: Price,
             images: Images,
-            continents: Continent
+            styles: Styles
         }
 
         Axios.post('/api/product/', body)
@@ -99,7 +99,7 @@ function UploadProductPage(props) {
                 <br />
                 <br />
                 <select onChange={continentChangeHandler} value={Continent}>
-                    {Continents.map(item => (
+                    {Styles.map(item => (
                         <option key={item.key} value={item.key}> {item.value}</option>
                     ))}
                 </select>

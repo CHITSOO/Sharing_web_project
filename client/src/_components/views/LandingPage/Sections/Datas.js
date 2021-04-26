@@ -1,4 +1,4 @@
-const continents = [
+const styles = [
     {
         "_id": 1,
         "name": "귀여운"
@@ -64,6 +64,6 @@ const price = [
 ]
 
 export {
-    continents,
+    styles,
     price
 }
